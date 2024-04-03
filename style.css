@@ -1,0 +1,11 @@
+#playerimg{
+    width: 50px; height: 50px; background-color: transparent;
+}
+#ngiocatori{
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+    width: 250px; height: 180px;
+  }
+#ngiocatori:hover {
+    width: 260px; height: 190px;
+    border-radius: 18px;
+  }

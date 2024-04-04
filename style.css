@@ -1,11 +1,48 @@
-#playerimg{
-    width: 50px; height: 50px; background-color: transparent;
+body{
+  background-color:#7fffd4;
+  text-align: center;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
+
+#titolo{
+  font-family: 'Brush Script MT', cursive;
+  font-size: xx-large;
+  text-shadow: 10px 10px 10px red;
+  text-align: center;
+  border-radius: 10%;
+}
+
+h2{
+  font-family: 'Brush Script MT', cursive;
+  font-size: xx-large;
+  text-shadow: 1px red;
+}
+
+#playerimg{
+    width: 55px; height: 55px; background-color: transparent;
+}
+
+
 #ngiocatori{
-    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+    box-shadow: 10px 10px 10px 1px rgba(0, 4, 255, 0.5);
     width: 250px; height: 180px;
   }
+
+
 #ngiocatori:hover {
+  box-shadow: 13px 13px 13px 1px rgba(0, 4, 255, 0.5);
     width: 260px; height: 190px;
     border-radius: 18px;
   }
+#sceltagiocatori {
+    margin-top: 30px;
+    text-align: center;
+    }
+
+ #regolamento {
+  margin-top: 80px;
+  margin-bottom: 0%;
+  margin-left: 1000px;
+  margin-right: 0%;
+ }

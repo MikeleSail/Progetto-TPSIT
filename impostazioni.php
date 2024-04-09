@@ -2,6 +2,8 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hangman Game</title>
 </head>
 <!-- LINK CSS -->
@@ -10,42 +12,46 @@
 
 <body>
     <!-- CANZONE -->
-    <audio autoplay loop id="canzone">
-        <source src="song\canzone_iniziale.mp3">
+    <audio autoplay id="canzone">
+        <source src="song\onmousehover.mp3">
     </audio>
 
     <?php
-    // Inizializzazione del numero di round
-    $rounds = 1;
+    session_start();
 
-    // Verifica se è stato inviato un valore attraverso il parametro GET
-    if (isset($_GET['rounds']) == true) {
-
-        // Limita il numero di round tra 1 e 10
-        $rounds = max(1, min(10, $rounds));
+    // Inizializzazione del contatore dei rounds se non è già stato impostato
+    if (!isset($_SESSION['rounds'])) {
+        $_SESSION['rounds'] = 1;
     }
 
-    // Verifica se è stato cliccato il pulsante "+" per incrementare i round
-    if (isset($_GET['increment']) == true) {
-        $rounds++;
-    }
-
-    // Verifica se è stato cliccato il pulsante "-" per decrementare i round
-    if (isset($_GET['decrement']) == true && $rounds > 1) {
-        $rounds--;
+    // Gestione dell'incremento del contatore
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (isset($_POST['increment'])) {
+            $_SESSION['rounds']++;
+        } elseif (isset($_POST['decrement']) && $_SESSION['rounds'] > 0) {
+            $_SESSION['rounds']--;
+        }
     }
     ?>
 
     <!-- SCRITTA HANGMAN GAME - LOGO -->
     <img id="logo" src="immagini_gioco\hangman_game.png">
-    <h1>NUMERO ROUND: <?php echo $rounds; ?></h1>
-    <form method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+    <h1>NUMERO ROUND</h1>
+    <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         <div class="bg-info clearfix" id="divround">
-            <input type="submit" name="decrement" class="btn btn-secondary float-start" value="-<?php echo $rounds > 1 ? ' ' : ''; ?>">
-            <br>
-            <h1 style="text-align: center;" id="nround"><?php echo $rounds ?></h1>
-            <input type="submit" name="increment" value="+ " class="btn btn-secondary float-end">
+        <button class="btn btn-secondary float-start" type="submit" name="decrement" <?php if ($_SESSION['rounds'] === 1) echo 'disabled'; ?>>-</button>
+        <br>    
+            <h1 style="text-align: center;"><?php echo $_SESSION['rounds']; ?></h1>
+            <button class="btn btn-secondary float-end" type="submit" name="increment" <?php if ($_SESSION['rounds'] >= 10) echo 'disabled'; ?>>+</button>
         </div>
-</body>
+    </form>
+        <br>
+        <a href="http://localhost/game.php">
+    
+    <button>
+    Avanti
+    </button>
+</a>
+    </body>
 
 </html>

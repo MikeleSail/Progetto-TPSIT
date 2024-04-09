@@ -33,17 +33,7 @@
 </form>
 <?php
 session_start();
-    $ngiocatori = isset($_GET['players']) ? $_GET['players'] : 0;
-    // Controlla se è stato cliccato il regolamento
-    if(isset($_SESSION['localhost/regolamento.html']) && $_SESSION['localhost/regolamento.html'] === true) {
-        $buttonDisabled = false;
-    } else {
-        $buttonDisabled = true;
-    }
-    $_SESSION['http://localhost/regolamento.html'] = true;
-    header('Location: hangman%20game.php');
-    exit();
-?>
+    $ngiocatori = isset($_GET['players']) ? $_GET['players'] : 0; ?>
 <div id="selected-players"> 
     Giocatori selezionati:<?php echo $ngiocatori ?> 
     </div> 

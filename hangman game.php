@@ -38,7 +38,7 @@ session_start();
     Giocatori selezionati:<?php echo $ngiocatori ?> 
     </div> 
     <?php echo "<a id='next-button' href='http://localhost/impostazioni.php?players=$ngiocatori'>";?> 
-    <button <?php if($buttonDisabled) echo 'disabled'; ?>>
+    <button>
     Avanti
     </button></a>
 <!-- REGOLAMENTO -->

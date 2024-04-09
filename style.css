@@ -1,52 +1,62 @@
-  body{
-    background-color:#7fffd4;
-    text-align: center;
-    overflow-y: hidden;
-    overflow-x: hidden;
+body{
+  background-color:#7fffd4;
+  text-align: center;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+h2#scritta_scelta_giocatori{
+  font-family: 'Brush Script MT', cursive;
+  font-size: xx-large;
+  text-shadow: 10px 10px 10px 10px red;
+}
+
+#sceltagiocatori {
+  margin-top: 30px;
+  text-align: center;
   }
 
-  h2#scritta_scelta_giocatori{
-    font-family: 'Brush Script MT';
-    font-size: xx-large;
-    text-shadow: 10px 10px 10px 10px red;
+img#playerimg{
+  border: solid;
+  border-color: blue;
+  border-radius: 10px;
+}
+
+#btnplayers:hover {
+  box-shadow: 1px 1px 13px 13px rgba(0, 4, 255, 0.5);
   }
 
-  #sceltagiocatori {
-    margin-top: 30px;
-    text-align: center;
-    }
-
-  img#playerimg{
-    border: solid;
-    border-color: blue;
-    border-radius: 10px;
+#btnplayers::selection {
+  box-shadow: 1px 1px 20px 20px rgba(0, 4, 255, 0.5);
   }
 
-  #btnplayers:hover {
-    box-shadow: 1px 1px 13px 13px rgba(0, 4, 255, 0.5);
-    }
+  button#btnplayers {
+    background-color: transparent;
+    border: none;
+}
+ #regolamento {
+  margin-top: 80px;
+  margin-bottom: 0%;
+  margin-left: 1000px;
+  margin-right: 0%;
+ }
 
-  #btnplayers::selection {
-    box-shadow: 1px 1px 20px 20px rgba(0, 4, 255, 0.5);
-    }
-
-    button#btnplayers {
-      background-color: transparent;
-      border: none;
-  }
-  #regolamento {
-    margin-top: 80px;
-    margin-bottom: 0%;
-    margin-left: 1000px;
-    margin-right: 0%;
-  }
-
-  #divround {
-    text-align: center;
-    margin-top: 50px;
-    margin-left: 500px;
-    margin-right: 500px;
-    border-color: blue;
-    border-style: solid;
-    border-radius: 10px;
-  }
+ #divround {
+  text-align: center;
+  margin-top: 50px;
+  margin-left: 500px;
+  margin-right: 500px;
+  border-color: blue;
+  border-style: solid;
+  border-radius: 10px;
+ }
+#titolo{
+  text-align: center;
+  font-size: 200%;
+}
+#lettere{
+  text-align: center;
+  margin-top: auto;
+  margin-left: auto;
+  font-size: 200%;
+}

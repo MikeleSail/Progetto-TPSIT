@@ -1,0 +1,13 @@
+body{
+    background-color: aquamarine;
+}
+h1{
+    text-align: center;
+    font-size: 200%;
+}
+#lettere{
+    text-align: center;
+    margin-top: auto;
+    margin-left: auto;
+    font-size: 200%;
+}

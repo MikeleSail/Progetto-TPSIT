@@ -33,12 +33,12 @@
 </form>
 <?php
 session_start();
-    $ngiocatori = isset($_GET['players']) ? $_GET['players'] : 0; ?>
+    $_SESSION['players'] = isset($_GET['players']) ? $_GET['players'] : 0; ?>
 <div id="selected-players"> 
-    Giocatori selezionati:<?php echo $ngiocatori ?> 
+    Giocatori selezionati:<?php echo $_SESSION['players'] ?> 
     </div> 
-    <?php echo "<a id='next-button' href='http://localhost/impostazioni.php?players=$ngiocatori'>";?> 
-    <button>
+    <a href="http://localhost/impostazioni.php">
+    <button <?php if ($_SESSION['players'] == 0) echo 'disabled'; ?>>
     Avanti
     </button></a>
 <!-- REGOLAMENTO -->

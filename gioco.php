@@ -4,10 +4,10 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
 integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>hangman game</title>
-    <link href="giococss.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
-<h1>Gioco dell'Impiccato</h1>
+<h1 id="titolo">Gioco dell'Impiccato</h1>
     <div id="tentativi">
         <h2>tentativi: <?php $tentativi?> </h2>
     </div>
@@ -17,11 +17,21 @@ integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEw
     if (file_exists($filename)) {
       $parole = file($filename, FILE_IGNORE_NEW_LINES);
       $parolaCasuale = $parole[array_rand($parole)];
-      echo "<h1>La parola è: $parolaCasuale</h1>";
+
     } else {
       echo "Il file non esiste.";
     }
   ?>
+  <?php
+$lettere = str_split($parolaCasuale);
+$lunghezza = count($lettere);
+$testo="";
+$trattino="_";
+for($i = 0; $i < $lunghezza; $i++)
+{
+    echo" _ ";
+}
+?>
 </div>
 <div id="lettere">
 <button type="button" class="btn btn-dark">A</button>
@@ -51,9 +61,5 @@ integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEw
 <button type="button" class="btn btn-dark">Y</button>
 <button type="button" class="btn btn-dark">Z</button>
 </div>
-
-</body>
-</html>
-
 </body>
 </html>

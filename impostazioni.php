@@ -18,26 +18,26 @@
 
     <?php
     session_start();
-
     // Inizializzazione del contatore dei rounds se non è già stato impostato
     if (!isset($_SESSION['rounds'])) {
         $_SESSION['rounds'] = 1;
     }
+    // incremento del contatore
+    if (isset($_POST['increment']) && $_SESSION['rounds'] < 10) {  
+        $_SESSION['rounds']++;
+    }
 
-    // Gestione dell'incremento del contatore
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (isset($_POST['increment'])) {
-            $_SESSION['rounds']++;
-        } elseif (isset($_POST['decrement']) && $_SESSION['rounds'] > 0) {
-            $_SESSION['rounds']--;
-        }
+    // decremento del contatore
+    if (isset($_POST['decrement']) && $_SESSION['rounds'] > 1) {
+        $_SESSION['rounds']--;
     }
     ?>
 
     <!-- SCRITTA HANGMAN GAME - LOGO -->
-    <img id="logo" src="immagini_gioco\hangman_game.png">
+    <a href="http://localhost/hangman%20game.php"><image id="logo" src="immagini_gioco\hangman_game.png"></image></a>
+
     <h1>NUMERO ROUND</h1>
-    <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+    <form method="POST">
         <div class="bg-info clearfix" id="divround">
         <button class="btn btn-secondary float-start" type="submit" name="decrement" <?php if ($_SESSION['rounds'] === 1) echo 'disabled'; ?>>-</button>
         <br>    
@@ -47,11 +47,10 @@
     </form>
         <br>
         <a href="http://localhost/game.php">
-    
-    <button>
-    Avanti
-    </button>
-</a>
+            <button>
+            Avanti
+            </button>
+        </a>
     </body>
 
 </html>

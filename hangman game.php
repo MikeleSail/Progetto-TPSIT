@@ -4,13 +4,13 @@
     <title>Hangman Game</title>
 </head>
     
-<body style="background-color:aquamarine;">
+<body style="background-color:aquamarinw;">
 <!-- CANZONE -->
     <audio autoplay loop id="canzone">
         <source src="song\canzone_iniziale.mp3">
     </audio>
 <!-- SCRITTA HANGMAN GAME - LOGO -->
-<img id="logo" src="immagini_gioco\hangman_game.png">
+<a href="http://localhost/hangman%20game.php"><image id="logo" src="immagini_gioco\hangman_game.png"></image></a>
 <!-- LINK CSS -->
     <link href="style.css" rel="stylesheet">
 <!-- SCELTA NUMERO GIOCATORI -->
